@@ -16,6 +16,9 @@ class UrlTests extends PHPUnit_Framework_TestCase {
 		$this->assertFalse(verifyUrl('http://.'));
 	}
 
+
+
+
 	public function testVerifyUrlWithoutHttpOrHttpsShouldFail() {
 		$this->assertFalse(verifyUrl('google.com'));
 	}
@@ -27,6 +30,12 @@ class UrlTests extends PHPUnit_Framework_TestCase {
 	public function testVerifyUrlWithoutDomainIsFalse() {
 		$this->assertFalse(verifyUrl('http://'));
 	}
+
+	public function testVerifyURLWithHttpsIsTrue() {
+		$this->assertTrue(verifyUrl('https://google.com'));
+	}
+
+
 
 }
 
